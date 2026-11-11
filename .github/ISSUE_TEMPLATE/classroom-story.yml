@@ -1,0 +1,46 @@
+name: Share a classroom story
+description: Tell us what happened when you used the toolkit (anonymized), so others can learn from it.
+title: "Story: "
+labels: ["classroom story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Stories help other teachers, and the hard ones help most. Please describe people by role only ("a student", "a parent"), never by name or anything that could identify them.
+
+        **If a child is in danger, don't post it here.** Follow your school's safeguarding procedure and contact local emergency services.
+  - type: dropdown
+    id: grades
+    attributes:
+      label: Grade band
+      options:
+        - "K–2"
+        - "3–5"
+        - "6–8"
+        - "9–12"
+        - "Adults or teacher learning"
+        - "Prefer not to say"
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: The activity, what you tried, and how it went.
+    validations:
+      required: true
+  - type: textarea
+    id: helped
+    attributes:
+      label: What helped?
+  - type: textarea
+    id: change
+    attributes:
+      label: What would you change, or what should the toolkit change?
+  - type: checkboxes
+    id: care
+    attributes:
+      label: Zero harm checks
+      options:
+        - label: My story names no one and includes nothing that could identify a student, family or colleague.
+          required: true
+        - label: I'm comfortable with this being public.
+          required: true

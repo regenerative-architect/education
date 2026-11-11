@@ -1,0 +1,68 @@
+name: Something isn't working
+description: Report a broken link, a tool that misbehaves, an accessibility barrier or an offline problem.
+title: "Problem: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping make the toolkit work for everyone. Accessibility barriers count as bugs.
+        For a security or privacy problem, please report it privately instead (see SECURITY.md).
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to see it
+      placeholder: |
+        1. Open the library
+        2. Choose …
+        3. …
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Which edition?
+      options:
+        - "The website"
+        - "The installed app"
+        - "The single file"
+        - "Not sure"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      placeholder: "For example: Chromebook, Chrome 142; iPhone, Safari"
+  - type: dropdown
+    id: offline
+    attributes:
+      label: Were you offline?
+      options:
+        - "No"
+        - "Yes"
+        - "Not sure"
+  - type: dropdown
+    id: assistive
+    attributes:
+      label: Were you using assistive technology?
+      description: Optional. It helps us reproduce accessibility problems.
+      options:
+        - "No"
+        - "Screen reader"
+        - "Magnifier or zoom"
+        - "Keyboard only"
+        - "Voice control"
+        - "Other"
+        - "Prefer not to say"
+  - type: checkboxes
+    id: care
+    attributes:
+      label: Privacy check
+      options:
+        - label: Any screenshots or text I add show no student names, faces or personal details.
+          required: true

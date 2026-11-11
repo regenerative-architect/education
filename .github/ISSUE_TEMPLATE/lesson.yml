@@ -1,0 +1,73 @@
+name: Share a lesson or activity
+description: Offer a lesson plan or classroom activity for the toolkit.
+title: "Lesson: "
+labels: ["lesson"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for sharing. Lessons here are read by teachers everywhere, so please keep them free of anyone's personal details.
+        Every activity needs a way to take part **without** AI, and for children under 13, AI use stays teacher-led.
+  - type: input
+    id: title
+    attributes:
+      label: Lesson title
+      placeholder: "For example: Truth detectives, checking an AI answer"
+    validations:
+      required: true
+  - type: dropdown
+    id: grades
+    attributes:
+      label: Grade band
+      options:
+        - "K–2 (teacher-led only)"
+        - "3–5 (teacher-led)"
+        - "6–8"
+        - "9–12"
+        - "Adults or teacher learning"
+    validations:
+      required: true
+  - type: input
+    id: subject
+    attributes:
+      label: Subject
+      placeholder: "For example: science, language arts, art"
+  - type: input
+    id: time
+    attributes:
+      label: Time needed
+      placeholder: "For example: one 45-minute class"
+  - type: dropdown
+    id: ai-use
+    attributes:
+      label: How AI is used
+      options:
+        - "No AI (an unplugged or alternative activity)"
+        - "The teacher runs the AI tool with the class"
+        - "Students use an AI tool, with supervision"
+    validations:
+      required: true
+  - type: textarea
+    id: lesson
+    attributes:
+      label: The lesson
+      description: Goals, steps, materials and reflection questions. Markdown works here.
+    validations:
+      required: true
+  - type: textarea
+    id: alternative
+    attributes:
+      label: The no-AI version
+      description: How a student can take part fully without using AI.
+    validations:
+      required: true
+  - type: checkboxes
+    id: care
+    attributes:
+      label: Zero harm checks
+      options:
+        - label: This lesson has no student names, photos, voices or identifying stories.
+          required: true
+        - label: I wrote this, or I have the right to share it under the project's license.
+          required: true
+        - label: I ran the SACRED check (in the toolkit) on the AI part of this activity.

@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use or adapt this toolkit in research, teaching materials or policy work, please cite it like this."
+title: "AI Co-Evolution in Education"
+abstract: "An open, offline-first toolkit for teaching with AI while protecting student voice, wellbeing and privacy: lessons, an ethics check, class agreements, evidence, policy guidance, planning tools and a library of guides, delivered as an installable web app and a single HTML file."
+type: software
+version: "2.2.0"
+date-released: "2026-11-10"
+license: AGPL-3.0-or-later
+url: "https://planetaryrestorationarchive.com"
+authors:
+  - name: "Planetary Restoration Archive"
+  - name: "Foster + Navi"
+keywords:
+  - education
+  - artificial intelligence
+  - AI literacy
+  - ethics
+  - student wellbeing
+  - privacy
+  - offline-first
+  - progressive web app

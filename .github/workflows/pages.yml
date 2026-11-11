@@ -1,0 +1,112 @@
+# Check and publish
+# -------------------------------------------------------------------------
+# On every push and pull request: rebuilds the single-file edition, versions
+# the service worker and runs the zero-harm site check (no tracking, no files
+# from other websites, no personal contact details, a strict security policy
+# on every page, nothing broken), then the test suite: the app end to end in
+# a real browser (Playwright), accessibility (axe-core), HTML validation
+# (html-validate) and the downloadable formats (the e-book is checked with
+# the W3C's EPUBCheck). If anything fails, nothing is published.
+#
+# On pushes to main: also publishes site/ to GitHub Pages.
+# One-time setup: Settings > Pages > Build and deployment > Source: GitHub Actions.
+#
+# The site check needs only Node.js; the tests and the downloads install their
+# pinned tools with `npm ci`.
+# Dependabot (.github/dependabot.yml) keeps the action versions current.
+# -------------------------------------------------------------------------
+name: Check and publish
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  check:
+    name: Zero-harm site check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Rebuild the single-file edition from the app
+        run: node tools/build-standalone.mjs
+      - name: Give the service worker this version's fingerprint
+        run: node tools/stamp-sw.mjs
+      - name: Check the site
+        run: node tools/check-site.mjs
+
+  test:
+    name: Tests (end to end, accessibility, HTML)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install the test tools (exact pinned versions)
+        working-directory: tools
+        run: npm ci
+      - name: Install the test browser
+        working-directory: tools
+        run: npx playwright install --with-deps chromium
+      - name: Get EPUBCheck, the W3C's e-book checker (only if its fingerprint matches)
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/epubcheck.zip" https://github.com/w3c/epubcheck/releases/download/v5.3.0/epubcheck-5.3.0.zip
+          echo "6c07e68584b2e2ce2f89fe06e1246dfead3eb36b46b340e7d93524f29dcff6c5  $RUNNER_TEMP/epubcheck.zip" | sha256sum -c -
+          unzip -q "$RUNNER_TEMP/epubcheck.zip" -d "$RUNNER_TEMP"
+          echo "EPUBCHECK_JAR=$RUNNER_TEMP/epubcheck-5.3.0/epubcheck.jar" >> "$GITHUB_ENV"
+      - name: Rebuild the single file and the downloads, and version the service worker
+        run: |
+          node tools/build-standalone.mjs
+          node tools/build-downloads.mjs
+          node tools/stamp-sw.mjs
+      - name: Run the tests
+        working-directory: tools
+        run: npm test
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: [check, test]
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install the build tools (exact pinned versions; the test tools aren't needed here)
+        working-directory: tools
+        run: npm ci --omit=dev
+      - name: Rebuild the single-file edition from the app
+        run: node tools/build-standalone.mjs
+      - name: Make the library downloads (e-book, Markdown, Kolibri)
+        run: node tools/build-downloads.mjs
+      - name: Give the service worker this version's fingerprint
+        run: node tools/stamp-sw.mjs
+      - name: Check again, so what's published is exactly what was checked
+        run: node tools/check-site.mjs
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v5

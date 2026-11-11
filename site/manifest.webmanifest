@@ -1,0 +1,39 @@
+{
+  "id": "./",
+  "name": "AI Co-Evolution in Education",
+  "short_name": "Co-Evolution",
+  "description": "An open, offline-first toolkit for teaching with AI while protecting student voice, wellbeing and privacy, with the full library of guides and lesson plans, an AI Lab that shows how language models work, and a private notebook.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#0b2022",
+  "theme_color": "#0b2022",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
+    { "src": "assets/screenshots/wide-home.jpg", "sizes": "1280x800", "type": "image/jpeg", "form_factor": "wide", "label": "The toolkit's home: a breathing light field and a welcome ritual" },
+    { "src": "assets/screenshots/wide-reader.jpg", "sizes": "1280x800", "type": "image/jpeg", "form_factor": "wide", "label": "Reading a lesson plan from the library, offline" },
+    { "src": "assets/screenshots/narrow-library.jpg", "sizes": "540x1080", "type": "image/jpeg", "form_factor": "narrow", "label": "The full library on a phone" },
+    { "src": "assets/screenshots/narrow-sacred.jpg", "sizes": "540x1080", "type": "image/jpeg", "form_factor": "narrow", "label": "The SACRED check before an AI activity" }
+  ],
+  "shortcuts": [
+    { "name": "The full library", "short_name": "Library", "description": "Browse every guide, lesson plan and template", "url": "./#library", "icons": [{ "src": "assets/icons/shortcut-library.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "SACRED check", "short_name": "SACRED", "description": "Check an AI activity before you use it", "url": "./#sacred", "icons": [{ "src": "assets/icons/shortcut-sacred.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "Class AI agreement", "short_name": "Agreement", "description": "Build a class agreement for AI use", "url": "./#agreement", "icons": [{ "src": "assets/icons/shortcut-agreement.png", "sizes": "96x96", "type": "image/png" }] },
+    { "name": "Welcome ritual", "short_name": "Breathe", "description": "Three breaths before you begin", "url": "./#ritual-guide", "icons": [{ "src": "assets/icons/shortcut-breathe.png", "sizes": "96x96", "type": "image/png" }] }
+  ],
+  "file_handlers": [
+    { "action": "./", "accept": { "text/markdown": [".md", ".markdown"] } }
+  ],
+  "launch_handler": { "client_mode": ["focus-existing", "auto"] },
+  "prefer_related_applications": false
+}
