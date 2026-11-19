@@ -1,0 +1,314 @@
+{
+  "about": "Open-source packages shipped in site/vendor, with versions and licenses. Written by tools/vendor.mjs.",
+  "files": [
+    {
+      "file": "vendor/marked.umd.js",
+      "license": "vendor/LICENSES/marked.txt",
+      "packages": [
+        {
+          "name": "marked",
+          "version": "18.1.1",
+          "license": "MIT"
+        }
+      ]
+    },
+    {
+      "file": "vendor/purify.min.js",
+      "license": "vendor/LICENSES/dompurify.txt",
+      "packages": [
+        {
+          "name": "dompurify",
+          "version": "3.4.17",
+          "license": "(MPL-2.0 OR Apache-2.0)"
+        }
+      ]
+    },
+    {
+      "file": "vendor/minisearch.js",
+      "license": "vendor/LICENSES/minisearch.txt",
+      "packages": [
+        {
+          "name": "minisearch",
+          "version": "7.2.0",
+          "license": "MIT"
+        }
+      ]
+    },
+    {
+      "file": "vendor/qrcode.js",
+      "license": "vendor/LICENSES/qrcode-generator.txt",
+      "packages": [
+        {
+          "name": "qrcode-generator",
+          "version": "2.0.4",
+          "license": "MIT"
+        }
+      ]
+    },
+    {
+      "file": "vendor/turndown.js",
+      "license": "vendor/LICENSES/turndown.txt",
+      "packages": [
+        {
+          "name": "@joplin/turndown-plugin-gfm",
+          "version": "1.0.68",
+          "license": "MIT"
+        },
+        {
+          "name": "turndown",
+          "version": "7.2.4",
+          "license": "MIT"
+        }
+      ]
+    },
+    {
+      "file": "vendor/gpt-tokenizer.js",
+      "license": "vendor/LICENSES/gpt-tokenizer.txt",
+      "packages": [
+        {
+          "name": "gpt-tokenizer",
+          "version": "4.1.0",
+          "license": "MIT"
+        }
+      ]
+    },
+    {
+      "file": "vendor/fsrs.js",
+      "license": "vendor/LICENSES/fsrs.txt",
+      "packages": [
+        {
+          "name": "ts-fsrs",
+          "version": "5.4.2",
+          "license": "MIT"
+        }
+      ]
+    },
+    {
+      "file": "vendor/plain-kind.js",
+      "license": "vendor/LICENSES/plain-kind.txt",
+      "packages": [
+        {
+          "name": "array-iterate",
+          "version": "2.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "automated-readability",
+          "version": "2.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "bail",
+          "version": "2.0.2",
+          "license": "MIT"
+        },
+        {
+          "name": "coleman-liau",
+          "version": "2.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "dale-chall",
+          "version": "2.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "dale-chall-formula",
+          "version": "2.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "devlop",
+          "version": "1.1.0",
+          "license": "MIT"
+        },
+        {
+          "name": "extend",
+          "version": "3.0.2",
+          "license": "MIT"
+        },
+        {
+          "name": "flesch",
+          "version": "2.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "gunning-fog",
+          "version": "2.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "is-plain-obj",
+          "version": "4.1.0",
+          "license": "MIT"
+        },
+        {
+          "name": "nlcst-is-literal",
+          "version": "3.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "nlcst-normalize",
+          "version": "4.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "nlcst-search",
+          "version": "4.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "nlcst-to-string",
+          "version": "4.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "normalize-strings",
+          "version": "1.1.1",
+          "license": "MIT"
+        },
+        {
+          "name": "parse-english",
+          "version": "7.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "parse-latin",
+          "version": "7.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "pluralize",
+          "version": "8.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "quotation",
+          "version": "2.0.3",
+          "license": "MIT"
+        },
+        {
+          "name": "retext-english",
+          "version": "5.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "retext-equality",
+          "version": "7.1.0",
+          "license": "MIT"
+        },
+        {
+          "name": "retext-passive",
+          "version": "5.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "retext-readability",
+          "version": "8.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "retext-simplify",
+          "version": "8.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "retext-stringify",
+          "version": "4.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "smog-formula",
+          "version": "2.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "spache",
+          "version": "2.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "spache-formula",
+          "version": "2.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "syllable",
+          "version": "5.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "trough",
+          "version": "2.2.0",
+          "license": "MIT"
+        },
+        {
+          "name": "unified",
+          "version": "11.0.5",
+          "license": "MIT"
+        },
+        {
+          "name": "unist-util-find-before",
+          "version": "4.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "unist-util-is",
+          "version": "6.0.1",
+          "license": "MIT"
+        },
+        {
+          "name": "unist-util-modify-children",
+          "version": "4.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "unist-util-position",
+          "version": "5.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "unist-util-stringify-position",
+          "version": "4.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "unist-util-visit",
+          "version": "5.2.0",
+          "license": "MIT"
+        },
+        {
+          "name": "unist-util-visit-children",
+          "version": "3.0.0",
+          "license": "MIT"
+        },
+        {
+          "name": "unist-util-visit-parents",
+          "version": "6.1.0",
+          "license": "MIT"
+        },
+        {
+          "name": "vfile",
+          "version": "6.0.3",
+          "license": "MIT"
+        },
+        {
+          "name": "vfile-message",
+          "version": "4.0.4",
+          "license": "MIT"
+        }
+      ]
+    },
+    {
+      "file": "vendor/fzstd.js",
+      "license": "vendor/LICENSES/fzstd.txt",
+      "packages": [
+        {
+          "name": "fzstd",
+          "version": "0.1.1",
+          "license": "MIT"
+        }
+      ]
+    }
+  ]
+}

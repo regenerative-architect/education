@@ -1,0 +1,35 @@
+{
+  "$schema": "https://html-validate.org/schemas/config.json",
+  "root": true,
+  "extends": [
+    "html-validate:recommended"
+  ],
+  "rules": {
+    "no-inline-style": "off",
+    "wcag/h32": "off",
+    "form-dup-name": [
+      "error",
+      {
+        "shared": [
+          "radio",
+          "checkbox"
+        ]
+      }
+    ],
+    "prefer-native-element": [
+      "error",
+      {
+        "exclude": [
+          "radio",
+          "progressbar",
+          "table",
+          "row",
+          "cell",
+          "columnheader",
+          "rowheader",
+          "listbox"
+        ]
+      }
+    ]
+  }
+}

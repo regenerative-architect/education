@@ -1,0 +1,144 @@
+# Check and publish
+# -------------------------------------------------------------------------
+# On every push and pull request: rebuilds the single-file edition, versions
+# the service worker and runs the zero-harm site check (no tracking, no files
+# from other websites, no personal contact details, a strict security policy
+# on every page, nothing broken), then the test suite: the app end to end in
+# a real browser (Playwright), accessibility (axe-core), HTML validation
+# (html-validate), what a screen reader hears (Guidepup's Virtual Screen
+# Reader), the downloadable formats (the e-book is checked with the W3C's
+# EPUBCheck, and the Kiwix package is opened in a real Kiwix server), the
+# question ladder's Kiwix reader (with real Wikipedia samples from openZIM's
+# test files) and the software bill of materials (against CycloneDX's
+# schema). If anything fails, nothing is published.
+#
+# On pushes to main: also publishes site/ to GitHub Pages.
+# One-time setup: Settings > Pages > Build and deployment > Source: GitHub Actions.
+#
+# Since version 2.5 nothing here checks files by fingerprint (SHA-256): no
+# signed build records, no published hashes. Tools come from their official
+# releases at pinned versions.
+#
+# The site check needs only Node.js; the tests and the downloads install their
+# pinned tools with `npm ci`. The Kiwix package also needs Python with
+# python-libzim (pinned below), and its test uses kiwix-serve from Ubuntu.
+# Dependabot (.github/dependabot.yml) keeps the action versions current.
+# -------------------------------------------------------------------------
+name: Check and publish
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  check:
+    name: Zero-harm site check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Rebuild the single-file edition from the app
+        run: node tools/build-standalone.mjs
+      - name: Give the service worker this version's label
+        run: node tools/stamp-sw.mjs
+      - name: Check the site
+        run: node tools/check-site.mjs
+
+  test:
+    name: Tests (end to end, accessibility, HTML)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install the test tools (exact pinned versions)
+        working-directory: tools
+        run: npm ci
+      - name: Install the test browser
+        working-directory: tools
+        run: npx playwright install --with-deps chromium
+      - name: Get EPUBCheck 5.3.0, the W3C's e-book checker, from its official releases
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/epubcheck.zip" https://github.com/w3c/epubcheck/releases/download/v5.3.0/epubcheck-5.3.0.zip
+          unzip -q "$RUNNER_TEMP/epubcheck.zip" -d "$RUNNER_TEMP"
+          echo "EPUBCHECK_JAR=$RUNNER_TEMP/epubcheck-5.3.0/epubcheck.jar" >> "$GITHUB_ENV"
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Install the Kiwix tools (libzim builds the package; kiwix-serve tests it like a reader would)
+        run: |
+          python -m pip install libzim==4.1.0
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends kiwix-tools
+      - name: Get openZIM's test files (small real Wikipedia libraries for the question ladder's tests)
+        run: |
+          git clone -q --filter=blob:none https://github.com/openzim/zim-testing-suite "$RUNNER_TEMP/zim-testing-suite"
+          git -C "$RUNNER_TEMP/zim-testing-suite" checkout -q 2edf72096208e60c82b6ebbe313baa552cc6af52
+          echo "ZIM_TESTING_SUITE=$RUNNER_TEMP/zim-testing-suite/data" >> "$GITHUB_ENV"
+      - name: Rebuild the single file and the downloads, list what's inside, and version the service worker
+        run: |
+          node tools/build-standalone.mjs
+          node tools/build-downloads.mjs
+          python tools/build-zim.py
+          node tools/build-sbom.mjs
+          node tools/stamp-sw.mjs
+      - name: Run the tests
+        working-directory: tools
+        run: npm test
+
+  deploy:
+    name: Publish to GitHub Pages
+    needs: [check, test]
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write   # GitHub Pages needs this to confirm the deployment comes from this workflow
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Install the build tools (exact pinned versions; the test tools aren't needed here)
+        working-directory: tools
+        run: npm ci --omit=dev
+      - name: Rebuild the single-file edition from the app
+        run: node tools/build-standalone.mjs
+      - name: Make the library downloads (e-book, Markdown, Kolibri)
+        run: node tools/build-downloads.mjs
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Make the Kiwix package (ZIM, with openZIM's python-libzim)
+        run: |
+          python -m pip install libzim==4.1.0
+          python tools/build-zim.py
+      - name: List what's inside (software bill of materials, CycloneDX)
+        run: node tools/build-sbom.mjs
+      - name: Give the service worker this version's label
+        run: node tools/stamp-sw.mjs
+      - name: Check again before publishing
+        run: node tools/check-site.mjs
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - name: Publish
+        id: deployment
+        uses: actions/deploy-pages@v5

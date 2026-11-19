@@ -1,0 +1,988 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-17T00:00:00Z",
+    "component": {
+      "type": "application",
+      "bom-ref": "app:ai-co-evolution-in-education",
+      "name": "AI Co-Evolution in Education",
+      "version": "2.5",
+      "description": "An offline-first toolkit for bringing AI into learning without losing human voice, wellbeing or privacy. Part of the Planetary Restoration Archive.",
+      "licenses": [
+        {
+          "expression": "AGPL-3.0-or-later AND CC-BY-SA-4.0"
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "aice:privacy",
+        "value": "No tracking, no analytics, no third-party requests; a strict Content Security Policy on every page."
+      },
+      {
+        "name": "aice:single-file",
+        "value": "download/ai-co-evolution-in-education.html contains the same components, the larger ones compressed."
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/%40joplin/turndown-plugin-gfm@1.0.68",
+      "group": "@joplin",
+      "name": "turndown-plugin-gfm",
+      "version": "1.0.68",
+      "purl": "pkg:npm/%40joplin/turndown-plugin-gfm@1.0.68",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/array-iterate@2.0.1",
+      "name": "array-iterate",
+      "version": "2.0.1",
+      "purl": "pkg:npm/array-iterate@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/automated-readability@2.0.1",
+      "name": "automated-readability",
+      "version": "2.0.1",
+      "purl": "pkg:npm/automated-readability@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/bail@2.0.2",
+      "name": "bail",
+      "version": "2.0.2",
+      "purl": "pkg:npm/bail@2.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/coleman-liau@2.0.1",
+      "name": "coleman-liau",
+      "version": "2.0.1",
+      "purl": "pkg:npm/coleman-liau@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/dale-chall-formula@2.0.1",
+      "name": "dale-chall-formula",
+      "version": "2.0.1",
+      "purl": "pkg:npm/dale-chall-formula@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/dale-chall@2.0.1",
+      "name": "dale-chall",
+      "version": "2.0.1",
+      "purl": "pkg:npm/dale-chall@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/devlop@1.1.0",
+      "name": "devlop",
+      "version": "1.1.0",
+      "purl": "pkg:npm/devlop@1.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/dompurify@3.4.17",
+      "name": "dompurify",
+      "version": "3.4.17",
+      "purl": "pkg:npm/dompurify@3.4.17",
+      "licenses": [
+        {
+          "expression": "MPL-2.0 OR Apache-2.0"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/extend@3.0.2",
+      "name": "extend",
+      "version": "3.0.2",
+      "purl": "pkg:npm/extend@3.0.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/flesch@2.0.1",
+      "name": "flesch",
+      "version": "2.0.1",
+      "purl": "pkg:npm/flesch@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/fzstd@0.1.1",
+      "name": "fzstd",
+      "version": "0.1.1",
+      "purl": "pkg:npm/fzstd@0.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/gpt-tokenizer@4.1.0",
+      "name": "gpt-tokenizer",
+      "version": "4.1.0",
+      "purl": "pkg:npm/gpt-tokenizer@4.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/gunning-fog@2.0.1",
+      "name": "gunning-fog",
+      "version": "2.0.1",
+      "purl": "pkg:npm/gunning-fog@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/is-plain-obj@4.1.0",
+      "name": "is-plain-obj",
+      "version": "4.1.0",
+      "purl": "pkg:npm/is-plain-obj@4.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/marked@18.1.1",
+      "name": "marked",
+      "version": "18.1.1",
+      "purl": "pkg:npm/marked@18.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/minisearch@7.2.0",
+      "name": "minisearch",
+      "version": "7.2.0",
+      "purl": "pkg:npm/minisearch@7.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/nlcst-is-literal@3.0.0",
+      "name": "nlcst-is-literal",
+      "version": "3.0.0",
+      "purl": "pkg:npm/nlcst-is-literal@3.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/nlcst-normalize@4.0.0",
+      "name": "nlcst-normalize",
+      "version": "4.0.0",
+      "purl": "pkg:npm/nlcst-normalize@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/nlcst-search@4.0.0",
+      "name": "nlcst-search",
+      "version": "4.0.0",
+      "purl": "pkg:npm/nlcst-search@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/nlcst-to-string@4.0.0",
+      "name": "nlcst-to-string",
+      "version": "4.0.0",
+      "purl": "pkg:npm/nlcst-to-string@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/normalize-strings@1.1.1",
+      "name": "normalize-strings",
+      "version": "1.1.1",
+      "purl": "pkg:npm/normalize-strings@1.1.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/parse-english@7.0.0",
+      "name": "parse-english",
+      "version": "7.0.0",
+      "purl": "pkg:npm/parse-english@7.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/parse-latin@7.0.0",
+      "name": "parse-latin",
+      "version": "7.0.0",
+      "purl": "pkg:npm/parse-latin@7.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/pluralize@8.0.0",
+      "name": "pluralize",
+      "version": "8.0.0",
+      "purl": "pkg:npm/pluralize@8.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/qrcode-generator@2.0.4",
+      "name": "qrcode-generator",
+      "version": "2.0.4",
+      "purl": "pkg:npm/qrcode-generator@2.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/quotation@2.0.3",
+      "name": "quotation",
+      "version": "2.0.3",
+      "purl": "pkg:npm/quotation@2.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/retext-english@5.0.0",
+      "name": "retext-english",
+      "version": "5.0.0",
+      "purl": "pkg:npm/retext-english@5.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/retext-equality@7.1.0",
+      "name": "retext-equality",
+      "version": "7.1.0",
+      "purl": "pkg:npm/retext-equality@7.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/retext-passive@5.0.0",
+      "name": "retext-passive",
+      "version": "5.0.0",
+      "purl": "pkg:npm/retext-passive@5.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/retext-readability@8.0.0",
+      "name": "retext-readability",
+      "version": "8.0.0",
+      "purl": "pkg:npm/retext-readability@8.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/retext-simplify@8.0.0",
+      "name": "retext-simplify",
+      "version": "8.0.0",
+      "purl": "pkg:npm/retext-simplify@8.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/retext-stringify@4.0.0",
+      "name": "retext-stringify",
+      "version": "4.0.0",
+      "purl": "pkg:npm/retext-stringify@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/smog-formula@2.0.1",
+      "name": "smog-formula",
+      "version": "2.0.1",
+      "purl": "pkg:npm/smog-formula@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/spache-formula@2.0.1",
+      "name": "spache-formula",
+      "version": "2.0.1",
+      "purl": "pkg:npm/spache-formula@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/spache@2.0.1",
+      "name": "spache",
+      "version": "2.0.1",
+      "purl": "pkg:npm/spache@2.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/syllable@5.0.1",
+      "name": "syllable",
+      "version": "5.0.1",
+      "purl": "pkg:npm/syllable@5.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/trough@2.2.0",
+      "name": "trough",
+      "version": "2.2.0",
+      "purl": "pkg:npm/trough@2.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/ts-fsrs@5.4.2",
+      "name": "ts-fsrs",
+      "version": "5.4.2",
+      "purl": "pkg:npm/ts-fsrs@5.4.2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/turndown@7.2.4",
+      "name": "turndown",
+      "version": "7.2.4",
+      "purl": "pkg:npm/turndown@7.2.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/unified@11.0.5",
+      "name": "unified",
+      "version": "11.0.5",
+      "purl": "pkg:npm/unified@11.0.5",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/unist-util-find-before@4.0.1",
+      "name": "unist-util-find-before",
+      "version": "4.0.1",
+      "purl": "pkg:npm/unist-util-find-before@4.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/unist-util-is@6.0.1",
+      "name": "unist-util-is",
+      "version": "6.0.1",
+      "purl": "pkg:npm/unist-util-is@6.0.1",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/unist-util-modify-children@4.0.0",
+      "name": "unist-util-modify-children",
+      "version": "4.0.0",
+      "purl": "pkg:npm/unist-util-modify-children@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/unist-util-position@5.0.0",
+      "name": "unist-util-position",
+      "version": "5.0.0",
+      "purl": "pkg:npm/unist-util-position@5.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/unist-util-stringify-position@4.0.0",
+      "name": "unist-util-stringify-position",
+      "version": "4.0.0",
+      "purl": "pkg:npm/unist-util-stringify-position@4.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/unist-util-visit-children@3.0.0",
+      "name": "unist-util-visit-children",
+      "version": "3.0.0",
+      "purl": "pkg:npm/unist-util-visit-children@3.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/unist-util-visit-parents@6.1.0",
+      "name": "unist-util-visit-parents",
+      "version": "6.1.0",
+      "purl": "pkg:npm/unist-util-visit-parents@6.1.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/unist-util-visit@5.2.0",
+      "name": "unist-util-visit",
+      "version": "5.2.0",
+      "purl": "pkg:npm/unist-util-visit@5.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/vfile-message@4.0.4",
+      "name": "vfile-message",
+      "version": "4.0.4",
+      "purl": "pkg:npm/vfile-message@4.0.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:npm/vfile@6.0.3",
+      "name": "vfile",
+      "version": "6.0.3",
+      "purl": "pkg:npm/vfile@6.0.3",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:vendor/marked.umd.js",
+      "name": "vendor/marked.umd.js",
+      "description": "License text in vendor/LICENSES/marked.txt"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:vendor/purify.min.js",
+      "name": "vendor/purify.min.js",
+      "description": "License text in vendor/LICENSES/dompurify.txt"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:vendor/minisearch.js",
+      "name": "vendor/minisearch.js",
+      "description": "License text in vendor/LICENSES/minisearch.txt"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:vendor/qrcode.js",
+      "name": "vendor/qrcode.js",
+      "description": "License text in vendor/LICENSES/qrcode-generator.txt"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:vendor/turndown.js",
+      "name": "vendor/turndown.js",
+      "description": "Bundled from 2 packages with esbuild; their licenses are in vendor/LICENSES/turndown.txt"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:vendor/gpt-tokenizer.js",
+      "name": "vendor/gpt-tokenizer.js",
+      "description": "License text in vendor/LICENSES/gpt-tokenizer.txt"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:vendor/fsrs.js",
+      "name": "vendor/fsrs.js",
+      "description": "License text in vendor/LICENSES/fsrs.txt"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:vendor/plain-kind.js",
+      "name": "vendor/plain-kind.js",
+      "description": "Bundled from 42 packages with esbuild; their licenses are in vendor/LICENSES/plain-kind.txt"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:vendor/fzstd.js",
+      "name": "vendor/fzstd.js",
+      "description": "License text in vendor/LICENSES/fzstd.txt"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:assets/fonts/atkinson-hyperlegible-next.woff2",
+      "name": "assets/fonts/atkinson-hyperlegible-next.woff2",
+      "version": "2.001",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "copyright": "Copyright 2020-2024 The Atkinson Hyperlegible Next Project Authors",
+      "description": "Atkinson Hyperlegible Next, the body text font. License: assets/fonts/OFL.txt"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:assets/fonts/literata-italic.woff2",
+      "name": "assets/fonts/literata-italic.woff2",
+      "version": "3.103",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "copyright": "Copyright 2017 The Literata Project Authors",
+      "description": "Literata italic, the \"ritual voice\". License: assets/fonts/OFL.txt"
+    },
+    {
+      "type": "data",
+      "bom-ref": "data:udhr-article-1",
+      "name": "Universal Declaration of Human Rights, Article 1, in twelve languages",
+      "description": "Quoted in the AI Lab's language comparison. Source: the OHCHR translation project; plain text from the UDHR in Unicode collection. Notice: vendor/LICENSES/udhr-article-1.txt",
+      "licenses": [
+        {
+          "license": {
+            "name": "Unicode License (UDHR in Unicode)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:download/ai-co-evolution-in-education.html",
+      "name": "download/ai-co-evolution-in-education.html",
+      "description": "The whole toolkit in one file, for opening without internet"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:download/ai-co-evolution-in-education.zim",
+      "name": "download/ai-co-evolution-in-education.zim",
+      "description": "The Kiwix package: the toolkit and its library for Kiwix readers and hotspots"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:download/ai-co-evolution-kolibri.zip",
+      "name": "download/ai-co-evolution-kolibri.zip",
+      "description": "A download offered on the site"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:download/ai-co-evolution-library-markdown.zip",
+      "name": "download/ai-co-evolution-library-markdown.zip",
+      "description": "A download offered on the site"
+    },
+    {
+      "type": "file",
+      "bom-ref": "file:download/ai-co-evolution-library.epub",
+      "name": "download/ai-co-evolution-library.epub",
+      "description": "The library as an e-book"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "app:ai-co-evolution-in-education",
+      "dependsOn": [
+        "data:udhr-article-1",
+        "file:assets/fonts/atkinson-hyperlegible-next.woff2",
+        "file:assets/fonts/literata-italic.woff2",
+        "file:vendor/fsrs.js",
+        "file:vendor/fzstd.js",
+        "file:vendor/gpt-tokenizer.js",
+        "file:vendor/marked.umd.js",
+        "file:vendor/minisearch.js",
+        "file:vendor/plain-kind.js",
+        "file:vendor/purify.min.js",
+        "file:vendor/qrcode.js",
+        "file:vendor/turndown.js"
+      ]
+    },
+    {
+      "ref": "file:vendor/marked.umd.js",
+      "dependsOn": [
+        "pkg:npm/marked@18.1.1"
+      ]
+    },
+    {
+      "ref": "file:vendor/purify.min.js",
+      "dependsOn": [
+        "pkg:npm/dompurify@3.4.17"
+      ]
+    },
+    {
+      "ref": "file:vendor/minisearch.js",
+      "dependsOn": [
+        "pkg:npm/minisearch@7.2.0"
+      ]
+    },
+    {
+      "ref": "file:vendor/qrcode.js",
+      "dependsOn": [
+        "pkg:npm/qrcode-generator@2.0.4"
+      ]
+    },
+    {
+      "ref": "file:vendor/turndown.js",
+      "dependsOn": [
+        "pkg:npm/%40joplin/turndown-plugin-gfm@1.0.68",
+        "pkg:npm/turndown@7.2.4"
+      ]
+    },
+    {
+      "ref": "file:vendor/gpt-tokenizer.js",
+      "dependsOn": [
+        "pkg:npm/gpt-tokenizer@4.1.0"
+      ]
+    },
+    {
+      "ref": "file:vendor/fsrs.js",
+      "dependsOn": [
+        "pkg:npm/ts-fsrs@5.4.2"
+      ]
+    },
+    {
+      "ref": "file:vendor/plain-kind.js",
+      "dependsOn": [
+        "pkg:npm/array-iterate@2.0.1",
+        "pkg:npm/automated-readability@2.0.1",
+        "pkg:npm/bail@2.0.2",
+        "pkg:npm/coleman-liau@2.0.1",
+        "pkg:npm/dale-chall-formula@2.0.1",
+        "pkg:npm/dale-chall@2.0.1",
+        "pkg:npm/devlop@1.1.0",
+        "pkg:npm/extend@3.0.2",
+        "pkg:npm/flesch@2.0.1",
+        "pkg:npm/gunning-fog@2.0.1",
+        "pkg:npm/is-plain-obj@4.1.0",
+        "pkg:npm/nlcst-is-literal@3.0.0",
+        "pkg:npm/nlcst-normalize@4.0.0",
+        "pkg:npm/nlcst-search@4.0.0",
+        "pkg:npm/nlcst-to-string@4.0.0",
+        "pkg:npm/normalize-strings@1.1.1",
+        "pkg:npm/parse-english@7.0.0",
+        "pkg:npm/parse-latin@7.0.0",
+        "pkg:npm/pluralize@8.0.0",
+        "pkg:npm/quotation@2.0.3",
+        "pkg:npm/retext-english@5.0.0",
+        "pkg:npm/retext-equality@7.1.0",
+        "pkg:npm/retext-passive@5.0.0",
+        "pkg:npm/retext-readability@8.0.0",
+        "pkg:npm/retext-simplify@8.0.0",
+        "pkg:npm/retext-stringify@4.0.0",
+        "pkg:npm/smog-formula@2.0.1",
+        "pkg:npm/spache-formula@2.0.1",
+        "pkg:npm/spache@2.0.1",
+        "pkg:npm/syllable@5.0.1",
+        "pkg:npm/trough@2.2.0",
+        "pkg:npm/unified@11.0.5",
+        "pkg:npm/unist-util-find-before@4.0.1",
+        "pkg:npm/unist-util-is@6.0.1",
+        "pkg:npm/unist-util-modify-children@4.0.0",
+        "pkg:npm/unist-util-position@5.0.0",
+        "pkg:npm/unist-util-stringify-position@4.0.0",
+        "pkg:npm/unist-util-visit-children@3.0.0",
+        "pkg:npm/unist-util-visit-parents@6.1.0",
+        "pkg:npm/unist-util-visit@5.2.0",
+        "pkg:npm/vfile-message@4.0.4",
+        "pkg:npm/vfile@6.0.3"
+      ]
+    },
+    {
+      "ref": "file:vendor/fzstd.js",
+      "dependsOn": [
+        "pkg:npm/fzstd@0.1.1"
+      ]
+    }
+  ]
+}

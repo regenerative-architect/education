@@ -1,0 +1,19 @@
+# Keeps the GitHub Actions in .github/workflows and the test tools up to date.
+# Once a month, Dependabot opens a pull request when one has a new version;
+# the site check and the whole test suite run on it like any other change.
+# (The libraries that are copied into the site are updated by hand, because each
+# needs `node tools/vendor.mjs` and a look at its license notice: see "Update the
+# open-source libraries" in the README.)
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+  # The test tools only (Playwright, axe-core, html-validate): devDependencies in tools/package.json
+  - package-ecosystem: "npm"
+    directory: "/tools"
+    schedule:
+      interval: "monthly"
+    allow:
+      - dependency-type: "development"

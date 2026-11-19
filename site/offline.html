@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Shown by the service worker when you're offline and the page you asked for isn't saved.
+     It loads nothing else, so it always works. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0b2022">
+<meta name="color-scheme" content="light dark">
+<title>You're offline · AI Co-Evolution in Education</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230b2022'/%3E%3Cpath d='M9 23c0-8 5-13 14-14 0 9-5 14-13 14z' fill='%23f2b84e'/%3E%3C/svg%3E">
+<style>
+  :root { color-scheme: light dark; --bg: #0b2022; --ink: #f4f1e8; --ink-2: #c9d6cf; --glow: #f2b84e; }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; display: grid; place-items: center; padding: 24px 16px;
+    font-family: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6; color: var(--ink);
+    background: radial-gradient(120% 80% at 70% 0%, #1f4a4b 0%, var(--bg) 60%) fixed, var(--bg);
+  }
+  main { max-width: 32rem; text-align: center; }
+  svg { width: 64px; height: 64px; margin: 0 auto 1rem; display: block; }
+  h1 { font-size: clamp(1.6rem, 1.2rem + 2vw, 2.2rem); line-height: 1.15; margin: 0 0 .75rem; }
+  p { color: var(--ink-2); margin: 0 0 1rem; }
+  a.btn {
+    display: inline-block; margin-top: .5rem; padding: .7rem 1.2rem; border-radius: 999px; font-weight: 700;
+    color: #1d1505; background: linear-gradient(180deg, #f7c86a 0%, #f2b84e 100%); text-decoration: none;
+  }
+  a.btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .small { font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+  <svg viewBox="0 0 24 24" fill="none" stroke="#f2b84e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14z"/><path d="M5 19c3-4 6-7 10-9"/></svg>
+  <h1>You're offline</h1>
+  <p>This page hasn't been saved on this device yet. Everything that has been saved still works, including the toolkit itself if you've opened it here before.</p>
+  <p class="small">Take a breath. When you're back online, this page will load as usual.</p>
+  <a class="btn" href="./">Go to the toolkit</a>
+</main>
+</body>
+</html>
