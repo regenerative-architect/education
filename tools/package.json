@@ -53,7 +53,7 @@
     "ajv-formats": "3.0.1",
     "ajv-formats-draft2019": "1.6.1",
     "axe-core": "4.14.0",
-    "html-validate": "11.17.0",
+    "html-validate": "11.21.1",
     "playwright": "1.63.0"
   },
   "engines": {
